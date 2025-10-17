@@ -1,0 +1,122 @@
+/* General layout */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f7f5ef;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Chirps container */
+.chirps-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Page title */
+.chirps-container h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* Create chirp link */
+.create-chirp-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #556b2f;
+}
+
+.create-chirp-link:hover {
+    color: #3b4b1d;
+}
+
+/* Chirp card */
+.chirp-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Chirp user and message */
+.chirp-user {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.chirp-message {
+    margin-bottom: 8px;
+}
+
+/* Timestamp */
+.chirp-time {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* Action buttons */
+.chirp-actions {
+    margin-top: 10px;
+}
+
+.chirp-actions a,
+.chirp-actions button {
+    font-size: 0.9rem;
+    margin-right: 10px;
+    text-decoration: none;
+    padding: 5px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.chirp-actions a {
+    background-color: #e8e8e0;
+    color: #556b2f;
+}
+
+.chirp-actions a:hover {
+    background-color: #d0d0c5;
+}
+
+.chirp-actions button {
+    background-color: #fff;
+    border: 1px solid #dd3333;
+    color: #dd3333;
+}
+
+.chirp-actions button:hover {
+    background-color: #dd3333;
+    color: #fff;
+}
+
+/* Form input */
+.chirp-form input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.chirp-form button {
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: none;
+    background-color: #556b2f;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.chirp-form button:hover {
+    background-color: #3b4b1d;
+}
