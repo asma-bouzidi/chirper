@@ -4,18 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Chirp;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class ChirpController extends Controller
 {
-    // Show all chirps
+    use AuthorizesRequests;
+
     public function index()
     {
         $chirps = Chirp::with('user')->latest()->get();
-
         return view('chirps.index', compact('chirps'));
     }
 
-    // Store a new chirp
+    public function create()
+    {
+        return view('chirps.create');
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -30,13 +35,6 @@ class ChirpController extends Controller
         return redirect()->route('chirps.index');
     }
 
-    // Show the form to create a new chirp
-    public function create()
-    {
-        return view('chirps.create');
-    }
-
-    // Edit and update chirp (for later steps)
     public function edit(Chirp $chirp)
     {
         $this->authorize('update', $chirp);
@@ -51,7 +49,9 @@ class ChirpController extends Controller
             'message' => 'required|string|max:255',
         ]);
 
-        $chirp->update(['message' => $request->message]);
+        $chirp->update([
+            'message' => $request->message,
+        ]);
 
         return redirect()->route('chirps.index');
     }

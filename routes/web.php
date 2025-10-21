@@ -28,6 +28,7 @@ Route::get('/dashboard', function() {
 })->middleware(['auth'])->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
+    Route::resource('chirps', ChirpController::class);
     Route::get('/chirps', [ChirpController::class, 'index'])->name('chirps.index');
     Route::get('/chirps/create', [ChirpController::class, 'create'])->name('chirps.create');
     Route::post('/chirps', [ChirpController::class, 'store'])->name('chirps.store');
