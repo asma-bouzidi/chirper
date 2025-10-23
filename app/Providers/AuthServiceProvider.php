@@ -16,8 +16,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     
     protected $policies = [
-        Product::class => ProductPolicy::class,
-        Chirp::class => ChirpPolicy::class,
+        \App\Models\Chirp::class => \App\Policies\ChirpPolicy::class,
     ];
 
 
